@@ -1,0 +1,1566 @@
+/* =========================================================
+   ÓPTICA — ESTILO PRINCIPAL
+   ========================================================= */
+
+:root {
+    --pink-50: #fff8fa;
+    --pink-100: #ffeef3;
+    --pink-200: #ffdce6;
+    --pink-300: #f7bdce;
+    --pink-400: #e89caf;
+
+    --gold: #c79b52;
+    --gold-light: #e7c98e;
+    --gold-dark: #9b7435;
+
+    --cream: #fffaf5;
+    --white: #ffffff;
+
+    --text: #4a3940;
+    --text-light: #806d74;
+
+    --dark: #33252b;
+
+    --shadow:
+        0 20px 60px rgba(92, 51, 65, 0.09);
+
+    --radius: 28px;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: "Poppins", sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 78px;
+
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255, 250, 245, 0.88);
+
+    backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid rgba(199, 155, 82, 0.13);
+
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--dark);
+
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.logo-eye {
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--gold);
+
+    border: 1px solid var(--gold);
+
+    border-radius: 50%;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 28px;
+
+    align-items: center;
+}
+
+.navbar nav a {
+    font-size: 0.82rem;
+    color: var(--text-light);
+
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: var(--gold-dark);
+}
+
+.nav-game {
+    padding: 9px 18px;
+
+    border-radius: 50px;
+
+    background: var(--dark);
+    color: white !important;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    padding: 150px 8% 100px;
+
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+
+    align-items: center;
+    gap: 70px;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(247, 189, 206, 0.45),
+            transparent 32%
+        ),
+        var(--cream);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.eyebrow {
+    display: inline-block;
+
+    color: var(--gold-dark);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(4rem, 8vw, 7.5rem);
+
+    line-height: 0.85;
+
+    font-weight: 600;
+
+    color: var(--dark);
+
+    margin-bottom: 35px;
+}
+
+.hero h1 span,
+.section-heading h2 span,
+.game-header h2 span {
+    display: block;
+
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+.hero p {
+    max-width: 590px;
+
+    font-size: 1.05rem;
+
+    color: var(--text-light);
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 25px;
+
+    border-radius: 50px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--dark);
+    color: white;
+
+    box-shadow: 0 12px 30px rgba(51, 37, 43, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 1px solid var(--gold);
+
+    color: var(--gold-dark);
+}
+
+.btn-outline:hover {
+    background: var(--gold);
+    color: white;
+}
+
+
+/* =========================================================
+   HERO EYE
+   ========================================================= */
+
+.hero-art {
+    height: 550px;
+
+    display: grid;
+    place-items: center;
+
+    position: relative;
+}
+
+.eye-illustration {
+    width: min(430px, 80vw);
+    height: 290px;
+
+    display: grid;
+    place-items: center;
+
+    transform: rotate(-5deg);
+
+    filter: drop-shadow(
+        0 30px 40px rgba(122, 68, 85, 0.17)
+    );
+}
+
+.eye-white {
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #ffeef3
+        );
+
+    border-radius:
+        70% 25% 70% 25% /
+        55% 45% 55% 45%;
+
+    border: 4px solid #e9c4cf;
+
+    display: grid;
+    place-items: center;
+
+    transform: rotate(2deg);
+}
+
+.iris {
+    width: 145px;
+    height: 145px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #31282b 0 20%,
+            #b47a66 21% 38%,
+            #d9a47d 39% 55%,
+            #8e5a51 56% 70%,
+            #3d2c30 71%
+        );
+
+    display: grid;
+    place-items: center;
+
+    border: 7px solid rgba(255, 255, 255, 0.65);
+
+    position: relative;
+
+    box-shadow:
+        inset 0 0 25px rgba(20, 10, 10, 0.5);
+}
+
+.pupil {
+    width: 48px;
+    height: 48px;
+
+    background: #1d181a;
+
+    border-radius: 50%;
+}
+
+.iris-light {
+    width: 20px;
+    height: 20px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    top: 27px;
+    left: 38px;
+
+    opacity: 0.8;
+}
+
+.orbit {
+    position: absolute;
+
+    border: 1px solid rgba(199, 155, 82, 0.35);
+
+    border-radius: 50%;
+}
+
+.orbit-1 {
+    width: 510px;
+    height: 510px;
+}
+
+.orbit-2 {
+    width: 370px;
+    height: 370px;
+
+    border-style: dashed;
+}
+
+.floating-symbol {
+    position: absolute;
+
+    color: var(--gold);
+
+    font-size: 2rem;
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+.symbol-1 {
+    top: 20%;
+    right: 5%;
+}
+
+.symbol-2 {
+    bottom: 17%;
+    left: 5%;
+
+    animation-delay: 1s;
+}
+
+.symbol-3 {
+    top: 15%;
+    left: 13%;
+
+    animation-delay: 2s;
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.section {
+    padding: 120px 8%;
+}
+
+.section-heading {
+    max-width: 760px;
+
+    margin-bottom: 60px;
+}
+
+.section-heading.centered {
+    text-align: center;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(3rem, 5vw, 5.3rem);
+
+    line-height: 0.95;
+
+    color: var(--dark);
+
+    margin-bottom: 25px;
+}
+
+.section-heading p {
+    color: var(--text-light);
+
+    max-width: 680px;
+}
+
+
+/* =========================================================
+   VISION CARDS
+   ========================================================= */
+
+.vision-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-bottom: 100px;
+}
+
+.info-card {
+    padding: 35px;
+
+    background: white;
+
+    border: 1px solid rgba(199, 155, 82, 0.13);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: 0.35s;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+}
+
+.info-card.featured {
+    background: var(--pink-100);
+}
+
+.card-number {
+    color: var(--gold);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 2px;
+
+    position: absolute;
+
+    top: 25px;
+    right: 25px;
+}
+
+.card-icon {
+    font-size: 2.4rem;
+
+    color: var(--gold);
+
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    color: var(--dark);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    color: var(--text-light);
+}
+
+
+/* =========================================================
+   ANATOMIA
+   ========================================================= */
+
+.eye-anatomy {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.anatomy-text h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 3rem;
+
+    line-height: 1;
+
+    color: var(--dark);
+
+    margin-bottom: 20px;
+}
+
+.anatomy-text > p {
+    color: var(--text-light);
+
+    margin-bottom: 35px;
+}
+
+.anatomy-list {
+    display: grid;
+
+    gap: 15px;
+}
+
+.anatomy-list div {
+    padding: 16px 20px;
+
+    background: white;
+
+    border-left: 3px solid var(--gold);
+
+    border-radius: 10px;
+}
+
+.anatomy-list strong {
+    display: block;
+
+    color: var(--dark);
+}
+
+.anatomy-list span {
+    color: var(--text-light);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   DIAGRAMA DO OLHO
+   ========================================================= */
+
+.eye-diagram {
+    min-height: 450px;
+
+    display: grid;
+    place-items: center;
+
+    background:
+        radial-gradient(
+            circle,
+            var(--pink-100),
+            transparent 60%
+        );
+}
+
+.diagram-eye {
+    width: 390px;
+    height: 250px;
+
+    background: white;
+
+    border: 3px solid var(--gold-light);
+
+    border-radius:
+        70% 30% 70% 30% /
+        55% 45% 55% 45%;
+
+    position: relative;
+
+    transform: rotate(-3deg);
+
+    box-shadow: var(--shadow);
+}
+
+.cornea {
+    position: absolute;
+
+    width: 65px;
+    height: 150px;
+
+    left: -8px;
+    top: 48px;
+
+    border-radius: 50%;
+
+    border-right: 7px solid var(--gold);
+
+    background: rgba(255, 230, 239, 0.5);
+}
+
+.lens {
+    position: absolute;
+
+    width: 70px;
+    height: 115px;
+
+    left: 105px;
+    top: 68px;
+
+    border-radius: 50%;
+
+    border: 3px solid var(--pink-400);
+
+    background: rgba(255, 239, 245, 0.8);
+}
+
+.retina {
+    position: absolute;
+
+    width: 35px;
+    height: 190px;
+
+    right: 24px;
+    top: 30px;
+
+    border-right: 7px solid var(--gold);
+
+    border-radius: 50%;
+}
+
+.label {
+    position: absolute;
+
+    background: var(--dark);
+    color: white;
+
+    padding: 6px 11px;
+
+    font-size: 0.65rem;
+
+    border-radius: 20px;
+
+    white-space: nowrap;
+}
+
+.label-cornea {
+    left: -40px;
+    top: 20px;
+}
+
+.label-lens {
+    left: 80px;
+    bottom: 18px;
+}
+
+.label-retina {
+    right: -40px;
+    top: 10px;
+}
+
+
+/* =========================================================
+   DOENÇAS
+   ========================================================= */
+
+.pink-section {
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink-100),
+            #fff7f4
+        );
+}
+
+.disease-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.disease-card {
+    padding: 32px;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    border: 1px solid rgba(199, 155, 82, 0.16);
+
+    border-radius: 24px;
+
+    transition: 0.3s;
+}
+
+.disease-card:hover {
+    background: white;
+
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow);
+}
+
+.disease-icon {
+    color: var(--gold);
+
+    font-size: 2rem;
+}
+
+.disease-card h3 {
+    color: var(--dark);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2rem;
+
+    margin: 12px 0;
+}
+
+.disease-card p {
+    color: var(--text-light);
+
+    font-size: 0.9rem;
+
+    min-height: 90px;
+}
+
+.disease-tag {
+    display: inline-block;
+
+    padding: 5px 12px;
+
+    border-radius: 30px;
+
+    background: var(--pink-200);
+
+    color: var(--gold-dark);
+
+    font-size: 0.68rem;
+
+    font-weight: 600;
+}
+
+.health-alert {
+    margin-top: 35px;
+
+    display: flex;
+
+    gap: 20px;
+
+    padding: 25px 30px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    border-left: 4px solid var(--gold);
+}
+
+.health-alert > span {
+    color: var(--gold);
+
+    font-size: 2rem;
+}
+
+.health-alert strong {
+    color: var(--dark);
+}
+
+.health-alert p {
+    color: var(--text-light);
+
+    font-size: 0.83rem;
+}
+
+
+/* =========================================================
+   ESPELHOS
+   ========================================================= */
+
+.mirror-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+.mirror-card {
+    background: white;
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    border: 1px solid rgba(199, 155, 82, 0.15);
+
+    box-shadow: var(--shadow);
+}
+
+.mirror-visual {
+    height: 300px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff,
+            var(--pink-100)
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.mirror-shape {
+    position: absolute;
+
+    width: 160px;
+    height: 230px;
+
+    top: 35px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f9e4e9,
+            #fff,
+            #d5ad75
+        );
+
+    border: 3px solid var(--gold);
+
+    box-shadow:
+        0 10px 25px rgba(199, 155, 82, 0.18);
+}
+
+.concave .mirror-shape {
+    right: 25px;
+
+    border-radius:
+        50% 0 0 50%;
+
+    transform: scaleX(-1);
+}
+
+.convex .mirror-shape {
+    left: 25px;
+
+    border-radius:
+        0 50% 50% 0;
+}
+
+.ray {
+    position: absolute;
+
+    width: 250px;
+    height: 2px;
+
+    background: var(--gold);
+
+    transform-origin: left center;
+
+    opacity: 0.7;
+}
+
+.concave .ray {
+    left: 5%;
+
+    transform-origin: right center;
+}
+
+.concave .ray-a {
+    top: 65px;
+    transform: rotate(12deg);
+}
+
+.concave .ray-b {
+    top: 150px;
+    transform: rotate(0deg);
+}
+
+.concave .ray-c {
+    top: 235px;
+    transform: rotate(-12deg);
+}
+
+.convex .ray {
+    right: 5%;
+    transform-origin: left center;
+}
+
+.convex .ray-a {
+    top: 65px;
+    transform: rotate(-12deg);
+}
+
+.convex .ray-b {
+    top: 150px;
+}
+
+.convex .ray-c {
+    top: 235px;
+    transform: rotate(12deg);
+}
+
+.focus-point {
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    box-shadow:
+        0 0 0 8px rgba(199, 155, 82, 0.15);
+}
+
+.mirror-content {
+    padding: 35px;
+}
+
+.mirror-type {
+    color: var(--gold-dark);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+}
+
+.mirror-content h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    color: var(--dark);
+
+    font-size: 2.6rem;
+
+    margin: 10px 0;
+}
+
+.mirror-content p {
+    color: var(--text-light);
+
+    font-size: 0.9rem;
+}
+
+.example {
+    margin-top: 25px;
+
+    padding: 18px;
+
+    background: var(--pink-50);
+
+    border-radius: 15px;
+}
+
+.example strong {
+    display: block;
+
+    color: var(--dark);
+
+    font-size: 0.8rem;
+}
+
+.example span {
+    color: var(--text-light);
+
+    font-size: 0.8rem;
+}
+
+.mirror-fact {
+    margin-top: 30px;
+
+    padding: 30px;
+
+    background: var(--dark);
+
+    color: white;
+
+    border-radius: var(--radius);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.big-number {
+    font-family: "Cormorant Garamond", serif;
+
+    color: var(--gold-light);
+
+    font-size: 4rem;
+
+    line-height: 1;
+}
+
+.mirror-fact p {
+    color: #d7cbd0;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   ANIMAIS
+   ========================================================= */
+
+.animal-section {
+    background: var(--pink-50);
+}
+
+.animal-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.animal-card {
+    background: white;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(199, 155, 82, 0.12);
+
+    transition: 0.35s;
+}
+
+.animal-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: var(--shadow);
+}
+
+.animal-image {
+    height: 190px;
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 6rem;
+
+    background:
+        radial-gradient(
+            circle at center,
+            white,
+            var(--pink-200)
+        );
+}
+
+.animal-info {
+    padding: 25px;
+}
+
+.animal-info > span {
+    color: var(--gold-dark);
+
+    font-size: 0.62rem;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+}
+
+.animal-info h3 {
+    color: var(--dark);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2.1rem;
+
+    margin: 5px 0;
+}
+
+.animal-info p {
+    color: var(--text-light);
+
+    font-size: 0.8rem;
+}
+
+.animal-fact {
+    margin-top: 18px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid var(--pink-200);
+
+    color: var(--gold-dark);
+
+    font-size: 0.72rem;
+}
+
+
+/* =========================================================
+   CURIOSIDADES
+   ========================================================= */
+
+.curiosity-section {
+    background: white;
+}
+
+.curiosity-list {
+    max-width: 900px;
+}
+
+.curiosity {
+    display: grid;
+
+    grid-template-columns: 80px 1fr;
+
+    gap: 30px;
+
+    padding: 35px 0;
+
+    border-bottom: 1px solid var(--pink-200);
+}
+
+.curiosity > span {
+    color: var(--gold);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2rem;
+}
+
+.curiosity h3 {
+    color: var(--dark);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2rem;
+}
+
+.curiosity p {
+    color: var(--text-light);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   JOGO
+   ========================================================= */
+
+.game-section {
+    padding: 110px 8%;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(247, 189, 206, 0.25),
+            transparent 30%
+        ),
+        var(--dark);
+
+    color: white;
+}
+
+.game-header {
+    max-width: 1100px;
+
+    margin: auto auto 45px;
+
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.game-header h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 4.5rem;
+
+    line-height: 0.9;
+
+    margin-bottom: 20px;
+}
+
+.game-header p {
+    max-width: 650px;
+
+    color: #cdbfc5;
+
+    font-size: 0.9rem;
+}
+
+.game-score {
+    min-width: 130px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    border: 1px solid rgba(231, 201, 142, 0.3);
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.game-score span {
+    display: block;
+
+    color: var(--gold-light);
+
+    font-size: 0.6rem;
+
+    letter-spacing: 2px;
+}
+
+.game-score strong {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 3rem;
+}
+
+.game-wrapper {
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+#p5-game {
+    width: 100%;
+
+    background: #21191d;
+
+    border: 1px solid rgba(231, 201, 142, 0.25);
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.25);
+}
+
+#p5-game canvas {
+    display: block;
+
+    width: 100% !important;
+
+    height: auto !important;
+}
+
+.game-instructions {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border-radius: 0 0 20px 20px;
+
+    color: #cdbfc5;
+}
+
+.game-instructions strong {
+    color: white;
+}
+
+.game-instructions p {
+    margin-top: 5px;
+
+    font-size: 0.78rem;
+}
+
+.game-tip {
+    color: var(--gold-light);
+
+    font-size: 0.78rem;
+
+    align-self: center;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    padding: 70px 8% 40px;
+
+    background: #241b1f;
+
+    color: white;
+
+    text-align: center;
+}
+
+.footer-logo {
+    color: var(--gold-light);
+
+    letter-spacing: 4px;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #a99ba0;
+
+    font-size: 0.85rem;
+
+    max-width: 500px;
+
+    margin: auto;
+}
+
+.footer-line {
+    width: 100%;
+
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    margin: 35px 0;
+}
+
+footer small {
+    color: #74676c;
+
+    font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar nav {
+        gap: 12px;
+    }
+
+    .navbar nav a {
+        font-size: 0.7rem;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-art {
+        height: 400px;
+    }
+
+    .vision-grid,
+    .disease-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .animal-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .eye-anatomy {
+        grid-template-columns: 1fr;
+    }
+
+    .mirror-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: 65px;
+
+        padding: 0 5%;
+    }
+
+    .navbar nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 120px 6% 70px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .hero-art {
+        height: 320px;
+    }
+
+    .eye-illustration {
+        width: 300px;
+        height: 210px;
+    }
+
+    .iris {
+        width: 105px;
+        height: 105px;
+    }
+
+    .orbit-1 {
+        width: 330px;
+        height: 330px;
+    }
+
+    .orbit-2 {
+        width: 260px;
+        height: 260px;
+    }
+
+    .section {
+        padding: 80px 6%;
+    }
+
+    .section-heading h2 {
+        font-size: 3.5rem;
+    }
+
+    .vision-grid,
+    .disease-grid,
+    .animal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .diagram-eye {
+        width: 300px;
+        height: 200px;
+    }
+
+    .mirror-fact {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .game-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .game-header h2 {
+        font-size: 3.7rem;
+    }
+
+    .game-score {
+        width: 100%;
+    }
+
+    .game-instructions {
+        flex-direction: column;
+    }
+
+    .curiosity {
+        grid-template-columns: 50px 1fr;
+
+        gap: 15px;
+    }
+
+    .curiosity h3 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
